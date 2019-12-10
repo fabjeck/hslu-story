@@ -1,0 +1,19 @@
+.parallax-section {
+  width: 100%;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  &#one {
+    height: 200vh;
+    background-color: blue;
+  }
+  &#two {
+    height: 120vh;
+    background-color: green;
+  }
+  &#three {
+    height: 150vh;
+    background-color: red;
+  }
+}
