@@ -1,5 +1,5 @@
 let ticking = false;
-export default (callback) => {
+const throttle = (callback) => {
   if (!ticking) {
     window.requestAnimationFrame(() => {
       callback();
@@ -8,3 +8,5 @@ export default (callback) => {
   }
   ticking = true;
 };
+
+export default throttle;
