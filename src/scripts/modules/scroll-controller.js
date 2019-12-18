@@ -1,4 +1,4 @@
-import throttle from '../utils/event-utils';
+import { throttle, debounce } from '../utils/event-utils';
 
 // div containing scrollable parallax sections
 const container = document.getElementById('parallax-container');
@@ -46,5 +46,11 @@ const onScroll = () => {
     sections[currentSection].style.transform = `translate3d(0, -${relativeScroll}px, 0)`;
   });
 };
+// recalc props after resize
+const onResize = () => {
+  debounce(200, () => {
+    console.log('s');
+  });
+};
 
-export { setup, onScroll };
+export { setup, onScroll, onResize };

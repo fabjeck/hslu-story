@@ -9,4 +9,12 @@ const throttle = (callback) => {
   ticking = true;
 };
 
-export default throttle;
+let timer;
+const debounce = (delay, callback) => {
+  clearTimeout(timer);
+  timer = setTimeout(() => {
+    callback();
+  }, delay);
+};
+
+export { throttle, debounce };
