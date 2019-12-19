@@ -4,6 +4,30 @@ import { throttle, debounce } from '../utils/event-utils';
 const container = document.getElementById('parallax-container');
 // HTMLCollection of the scrollable parallax sections
 const sections = document.getElementsByClassName('parallax-section');
+// Scroll position on current section in px
+let relativeScroll = 0;
+// Added up height of preceding sections
+let prevScroll = 0;
+// Index (based on HTMLCollection) of currently active section
+let currentSection = 0;
+
+// Set active section and calc its vertical position
+const calcProps = () => {
+  // check for activation of next section
+  if (relativeScroll > sections[currentSection].offsetHeight) {
+    sections[currentSection].style.transform = `translate3d(0, -${sections[currentSection].offsetHeight}px, 0)`;
+    prevScroll += sections[currentSection].offsetHeight;
+    currentSection += 1;
+  }
+  // check for activation of previous section
+  if (relativeScroll < 0) {
+    sections[currentSection].style.transform = 'translate3d(0, 0, 0)';
+    prevScroll -= sections[currentSection - 1].offsetHeight;
+    currentSection -= 1;
+  }
+  // calc scroll position of current section
+  relativeScroll = window.scrollY - prevScroll;
+};
 
 // 1. Calc added up height of parallax sections to define height of body
 // 2. Assign z-index to every section
@@ -19,26 +43,6 @@ const setup = () => {
   container.style.height = `${bodyHeight}px`;
 };
 
-// Scroll position on current section in px
-let relativeScroll = 0;
-// Added up height of preceding sections
-let prevScroll = 0;
-// Index (based on HTMLCollection) of currently active section
-let currentSection = 0;
-// Set active section and calc its vertical position
-const calcProps = () => {
-  if (relativeScroll > sections[currentSection].offsetHeight) {
-    sections[currentSection].style.transform = `translate3d(0, -${sections[currentSection].offsetHeight}px, 0)`;
-    prevScroll += sections[currentSection].offsetHeight;
-    currentSection += 1;
-  }
-  if (relativeScroll < 0) {
-    sections[currentSection].style.transform = 'translate3d(0, 0, 0)';
-    prevScroll -= sections[currentSection - 1].offsetHeight;
-    currentSection -= 1;
-  }
-  relativeScroll = window.scrollY - prevScroll;
-};
 // animate sections to simulate scroll
 const onScroll = () => {
   calcProps();
@@ -46,10 +50,11 @@ const onScroll = () => {
     sections[currentSection].style.transform = `translate3d(0, -${relativeScroll}px, 0)`;
   });
 };
-// recalc props after resize
+
+// reload page after resize
 const onResize = () => {
   debounce(200, () => {
-    console.log('s');
+    window.location.reload(true);
   });
 };
 
