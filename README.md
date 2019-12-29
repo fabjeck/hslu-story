@@ -1,6 +1,6 @@
 # Parallax Storytelling #
 
-Parallax scrolling experiment...
+Parallax Scrollytelling based on the company history of "Bialetti".
 
 ## Usage ##
 
@@ -13,6 +13,10 @@ npm run start
 # minified build for production
 npm run build
 ```
+
+## About ##
+
+This is a school work, which was realized as part of the elective subject "Storytelling".
 
 ## License ##
 
