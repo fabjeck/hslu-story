@@ -41,6 +41,7 @@ const setup = () => {
     bodyHeight += item.offsetHeight;
   }
   container.style.height = `${bodyHeight}px`;
+  container.style.visibility = 'visible';
 };
 
 // animate sections to simulate scroll
