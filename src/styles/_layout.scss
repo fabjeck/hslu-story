@@ -138,8 +138,8 @@
 
 #marketing {
   background-image: url('../assets/ad-banner.jpg');
-  background-size: cover;
-  background-position: bottom center;
+  background-size: contain;
+  background-position: center;
 
   .section-content {
     height: 100vh;
