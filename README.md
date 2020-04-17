@@ -2,6 +2,8 @@
 
 Parallax Scrollytelling based on the company history of "Bialetti".
 
+[Visit Page on Netlify](https://parallax-storytelling.netlify.app/)
+
 ## Usage ##
 
 ```bash
