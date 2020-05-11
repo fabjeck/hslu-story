@@ -1,8 +1,8 @@
 # Parallax Storytelling #
 
-Parallax Scrollytelling based on the company history of "Bialetti".
+This project was implemented as part of the study module __Storytelling__.
 
-[Visit Page on Netlify](https://parallax-storytelling.netlify.app/)
+[Visit on Netlify](https://parallax-storytelling.netlify.app/)
 
 ## Usage ##
 
@@ -15,10 +15,6 @@ npm run start
 # minified build for production
 npm run build
 ```
-
-## About ##
-
-This is a school work, which was realized as part of the elective subject "Storytelling".
 
 ## License ##
 
