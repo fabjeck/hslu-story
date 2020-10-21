@@ -1,6 +1,8 @@
 # Parallax Storytelling #
 
-This project was implemented as part of the study module __Storytelling__.
+HSLU Digital Ideation - HS2019
+
+**Storytelling**
 
 [Visit on Netlify](https://parallax-storytelling.netlify.app/)
 
